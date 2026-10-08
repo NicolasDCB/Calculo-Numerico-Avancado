@@ -1,9 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# ============================================================
 # Problema
-# ============================================================
 
 n = 50
 
@@ -21,9 +19,7 @@ b = np.ones(n)
 x_exato = np.linalg.solve(A, b)
 
 
-# ============================================================
 # Richardson estacionário
-# ============================================================
 
 def richardson(A, b, alpha=None, tol=1e-6, max_iter=10000):
 
@@ -63,9 +59,7 @@ def richardson(A, b, alpha=None, tol=1e-6, max_iter=10000):
     return x, max_iter, False, np.array(historico)
 
 
-# ============================================================
 # Richardson dinâmico / Gradiente
-# ============================================================
 
 def richardson_dinamico(A, b, tol=1e-6, max_iter=10000):
 
@@ -101,9 +95,7 @@ def richardson_dinamico(A, b, tol=1e-6, max_iter=10000):
     return x, max_iter, False, np.array(historico)
 
 
-# ============================================================
 # Gradiente Conjugado
-# ============================================================
 
 def gradiente_conjugado(A, b, x0=None, tol=1e-10, max_iter=None):
 
@@ -149,9 +141,7 @@ def gradiente_conjugado(A, b, x0=None, tol=1e-10, max_iter=None):
     return x, max_iter, False, np.array(historico), residuos
 
 
-# ============================================================
 # Executando os métodos
-# ============================================================
 
 sol_r, it_r, conv_r, hist_r = richardson(
     A, b, tol=1e-6
